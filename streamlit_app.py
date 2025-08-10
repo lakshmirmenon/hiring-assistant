@@ -6,11 +6,15 @@ import json
 import hashlib
 import re
 
-
+# =========================
+# ENV + API INITIALIZATION
+# =========================
 load_dotenv()
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
-
+# =========================
+# LLM HELPER FUNCTION
+# =========================
 def ask_gemini(prompt, history=None, system_prompt=""):
     try:
         messages = "\n".join([f"{msg['role'].capitalize()}: {msg['text']}" for msg in history[-5:]]) if history else ""
@@ -24,7 +28,9 @@ def ask_gemini(prompt, history=None, system_prompt=""):
         print(f"AI Model Error: {e}")
         return ""
 
-
+# =========================
+# FALLBACK MECHANISM
+# =========================
 def get_fallback_response(stage, user_input):
     fallback_responses = {
         "ask_name": "Could you please tell me your full name?",
@@ -39,7 +45,9 @@ def get_fallback_response(stage, user_input):
     }
     return fallback_responses.get(stage, "Let's continue with the screening process.")
 
-
+# =========================
+# SAVE DATA SECURELY
+# =========================
 def save_candidate_data():
     try:
         data = st.session_state["candidate_info"].copy()
@@ -63,12 +71,15 @@ def save_candidate_data():
     except Exception as e:
         print(f"Error saving data: {e}")
 
-
+# =========================
+# TECHNICAL QUESTIONS HANDLER (FIXED MULTI-TECH + SMART PROMPT)
+# =========================
 def handle_tech_questions(user_text):
     experience_years = st.session_state["candidate_info"].get("experience", 0)
     difficulty = "beginner" if experience_years < 2 else "intermediate" if experience_years < 5 else "advanced"
 
-    if st.session_state["questions"] and st.session_state["question_num"] > 0:
+    # ✅ Always store previous answer if we have asked at least one question
+    if st.session_state["question_num"] > 0:
         prev_q = st.session_state["questions"][st.session_state["question_num"] - 1]
         st.session_state["answers"].append({
             "tech": st.session_state["current_tech"],
@@ -76,18 +87,49 @@ def handle_tech_questions(user_text):
             "answer": user_text
         })
 
-    
+    # If finished all questions for current tech
+    if st.session_state["question_num"] >= len(st.session_state["questions"]) and st.session_state["questions"]:
+        if st.session_state["tech_index"] + 1 < len(st.session_state["tech_stack_list"]):
+            st.session_state["tech_index"] += 1
+            st.session_state["current_tech"] = st.session_state["tech_stack_list"][st.session_state["tech_index"]]
+            st.session_state["questions"] = []
+            st.session_state["question_num"] = 0
+        else:
+            st.session_state["chat_ended"] = True
+            save_candidate_data()
+            return "🎉 You've completed the technical screening! We'll be in touch soon."
+
+    # Generate new questions if starting a tech
     if not st.session_state["questions"]:
         current_tech = st.session_state["current_tech"]
-        prompt = f"Generate exactly 4 practical technical interview questions for {current_tech} at {difficulty} level."
+        previous_techs = st.session_state["tech_stack_list"][:st.session_state["tech_index"]]
+        prev_tech_str = ", ".join(previous_techs) if previous_techs else "none so far"
+
+        prompt = f"""
+You are an experienced technical interviewer.
+
+Candidate profile:
+- Technology to ask about: {current_tech}
+- Experience level: {difficulty} ({experience_years} years of professional experience)
+- Already covered technologies: {prev_tech_str}
+
+Your task:
+- Generate exactly 4 unique, practical, real-world technical interview questions for {current_tech}.
+- Tailor the difficulty to the candidate's experience level.
+- Avoid repeating questions from the already covered technologies.
+- Focus on applied skills, debugging, optimization, and real-world problem solving — not just definitions.
+
+Output format:
+1. Question one
+2. Question two
+3. Question three
+4. Question four
+
+Do NOT include explanations, answers, or extra commentary.
+"""
         response = ask_gemini(prompt)
         lines = [l.strip() for l in response.split("\n") if l.strip()]
-        questions = []
-        for line in lines:
-            if any(line.startswith(f"{i}.") for i in range(1, 6)):
-                q = line.split(".", 1)[1].strip()
-                if q:
-                    questions.append(q)
+        questions = [line.split(".", 1)[1].strip() for line in lines if re.match(r"^\d+\.", line)]
         if len(questions) < 4:
             fallback_questions = {
                 "beginner": [
@@ -110,29 +152,27 @@ def handle_tech_questions(user_text):
                 ]
             }
             questions = fallback_questions[difficulty]
-        st.session_state["questions"] = questions[:4]
+        st.session_state["questions"] = questions
         st.session_state["question_num"] = 0
 
-    
-    if st.session_state["question_num"] < len(st.session_state["questions"]):
-        q_num = st.session_state["question_num"] + 1
-        bot_reply = f"**Question {q_num} of 4 for {st.session_state['current_tech']}:**\n\n{st.session_state['questions'][st.session_state['question_num']]}"
-        st.session_state["question_num"] += 1
-        return bot_reply
-    else:
-        
-        if st.session_state["tech_index"] + 1 < len(st.session_state["tech_stack_list"]):
-            st.session_state["tech_index"] += 1
-            st.session_state["current_tech"] = st.session_state["tech_stack_list"][st.session_state["tech_index"]]
-            st.session_state["questions"] = []
-            st.session_state["question_num"] = 0
-            return f"✅ Done with {st.session_state['tech_stack_list'][st.session_state['tech_index']-1]}!\n\nNext: **{st.session_state['current_tech']}**"
-        else:
-            st.session_state["chat_ended"] = True
-            save_candidate_data()
-            return "🎉 You've completed the technical screening! We'll be in touch soon."
+    # Progress tracking
+    total_techs = len(st.session_state["tech_stack_list"])
+    current_tech_index = st.session_state["tech_index"] + 1
+    total_questions = len(st.session_state["questions"])
+    current_question_index = st.session_state["question_num"] + 1
 
+    bot_reply = (
+        f"📊 Progress: **Tech {current_tech_index} of {total_techs}** "
+        f"— **Question {current_question_index} of {total_questions}**\n\n"
+        f"**For {st.session_state['current_tech']}:**\n"
+        f"{st.session_state['questions'][st.session_state['question_num']]}"
+    )
+    st.session_state["question_num"] += 1
+    return bot_reply
 
+# =========================
+# PAGE SETUP
+# =========================
 st.set_page_config(page_title="TalentScout Hiring Assistant", page_icon="🎯", layout="centered")
 st.title("🎯 TalentScout Hiring Assistant")
 
@@ -152,7 +192,9 @@ if "chat_history" not in st.session_state:
 
 EXIT_KEYWORDS = {"exit", "quit", "bye", "goodbye", "stop", "end", "cancel", "terminate", "finish"}
 
-
+# =========================
+# MAIN CHAT LOGIC
+# =========================
 if st.session_state["chat_ended"]:
     st.success("🎉 Screening completed! Thank you.")
     if st.button("Start New Chat"):
@@ -244,10 +286,37 @@ else:
                     t.strip() for t in st.session_state["candidate_info"]["tech_stack"].split(",")
                 ]
                 st.session_state["current_tech"] = st.session_state["tech_stack_list"][0]
-                st.session_state["stage"] = "tech_questions"
-                bot_reply = handle_tech_questions("") 
+                st.session_state["stage"] = "confirm_summary"
+
+                ci = st.session_state["candidate_info"]
+                summary = f"""
+Here’s what I have so far:
+
+| Field            | Value |
+|------------------|-------|
+| **Name**         | {ci.get('name','')} |
+| **Email**        | {ci.get('email','')} |
+| **Phone**        | {ci.get('phone','')} |
+| **Experience**   | {ci.get('experience','')} years |
+| **Position**     | {ci.get('position','')} |
+| **Location**     | {ci.get('location','')} |
+| **Tech Stack**   | {ci.get('tech_stack','')} |
+        
+Is this information correct? (Yes / No)
+"""
+                bot_reply = summary
             else:
                 bot_reply = "Please provide the corrected tech stack."
+
+        elif stage == "confirm_summary":
+            if text.lower() in ["yes", "y", "correct"]:
+                st.session_state["stage"] = "tech_questions"
+                bot_reply = handle_tech_questions("")
+            else:
+                bot_reply = "Okay, let's restart so you can correct the details."
+                st.session_state["candidate_info"] = {}
+                st.session_state["tech_stack_list"] = []
+                st.session_state["stage"] = "ask_name"
 
         elif stage == "tech_questions":
             bot_reply = handle_tech_questions(text)

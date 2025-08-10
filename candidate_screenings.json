@@ -121,5 +121,22 @@
       }
     ],
     "completion_status": "completed"
+  },
+  {
+    "experience": 3.0,
+    "position": "Full Stack Developer",
+    "location": "Kochi, Kerala, India",
+    "tech_stack": "Javascript, React",
+    "name_hash": "56511fafa9d63d3d8e37c41776d4af39809074fdce883e514d0b183f12fae3ea",
+    "email_hash": "61c4a6d03e907f008884b2ab9ec3f71769115526dee34919345c1bf74edb8496",
+    "phone_hash": "ea1c9dc4bf69d337c872f034ef6b386121eb1f91978dae992e27cd74c7bdc8ff",
+    "answers": [
+      {
+        "tech": "Javascript",
+        "question": "You're tasked with optimizing a JavaScript function that processes a large array of objects. The function currently iterates through the array using a `for` loop and performs a computationally expensive operation on each object.  Describe how you would optimize this function for performance, considering different approaches like `forEach`, `map`, or other techniques.  Explain your reasoning and trade-offs involved.",
+        "answer": "Code Example \u2013 Using multiprocessing for CPU-bound task Since calculating square roots is CPU-bound, multiprocessing will bypass Python\u2019s Global Interpreter Lock (GIL) and actually use multiple CPU cores.  python Copy Edit import math from multiprocessing import Pool, cpu_count  def compute_sqrt(num):     return math.sqrt(num)  if __name__ == \"__main__\":     numbers = list(range(1_000_000))  # Large list     with Pool(cpu_count()) as pool:   # Use all available cores         results = pool.map(compute_sqrt, numbers)     print(f\"Processed {len(results)} numbers.\") 2. Code Example \u2013 Using threading for the same task Threads share the same process memory but still hit the GIL for CPU-bound work, so performance may not improve much here.  python Copy Edit import math from concurrent.futures import ThreadPoolExecutor  def compute_sqrt(num):     return math.sqrt(num)  numbers = list(range(1_000_000))  with ThreadPoolExecutor(max_workers=8) as executor:     results = list(executor.map(compute_sqrt, numbers))  print("
+      }
+    ],
+    "completion_status": "completed"
   }
 ]
