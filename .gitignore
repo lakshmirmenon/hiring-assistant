@@ -2,5 +2,5 @@ venv/
 __pycache__/
 *.pyc
 .env
-candidate_screening.json
+candidate_screenings.json
 chat_log.txt
