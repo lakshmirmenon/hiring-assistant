@@ -138,5 +138,329 @@
       }
     ],
     "completion_status": "completed"
+  },
+  {
+    "experience": 3.0,
+    "position": "Full Stack Developer",
+    "location": "Kochi, Kerala, India",
+    "tech_stack": "Javascript, React",
+    "name_hash": "56511fafa9d63d3d8e37c41776d4af39809074fdce883e514d0b183f12fae3ea",
+    "email_hash": "61c4a6d03e907f008884b2ab9ec3f71769115526dee34919345c1bf74edb8496",
+    "phone_hash": "ea1c9dc4bf69d337c872f034ef6b386121eb1f91978dae992e27cd74c7bdc8ff",
+    "answers": [
+      {
+        "tech": "Javascript",
+        "question": "**Explain the difference between `==` and `===` in JavaScript, and provide examples where using one over the other would produce different results.  Explain when you would choose to use each operator.**  (Tests understanding of loose vs. strict equality, type coercion)",
+        "answer": "I dont know the answer"
+      },
+      {
+        "tech": "Javascript",
+        "question": "**You are given an array of objects, each object representing a product with `name` and `price` properties. Write a function that sorts this array by price in ascending order.  Handle potential errors gracefully (e.g., non-numeric prices).** (Tests array manipulation, sorting algorithms, error handling, object property access)",
+        "answer": "Code Example \u2013 Using multiprocessing for CPU-bound task Since calculating square roots is CPU-bound, multiprocessing will bypass Python\u2019s Global Interpreter Lock (GIL) and actually use multiple CPU cores.  python Copy Edit import math from multiprocessing import Pool, cpu_count  def compute_sqrt(num):     return math.sqrt(num)  if __name__ == \"__main__\":     numbers = list(range(1_000_000))  # Large list     with Pool(cpu_count()) as pool:   # Use all available cores         results = pool.map(compute_sqrt, numbers)     print(f\"Processed {len(results)} numbers.\") 2. Code Example \u2013 Using threading for the same task Threads share the same process memory but still hit the GIL for CPU-bound work, so performance may not improve much here.  python Copy Edit import math from concurrent.futures import ThreadPoolExecutor  def compute_sqrt(num):     return math.sqrt(num)  numbers = list(range(1_000_000))  with ThreadPoolExecutor(max_workers=8) as executor:     results = list(executor.map(compute_sqrt, numbers))  print("
+      }
+    ],
+    "completion_status": "completed"
+  },
+  {
+    "experience": 3.0,
+    "position": "Full Stack Developer",
+    "location": "Kochi, Kerala, India",
+    "tech_stack": "Javascript, React",
+    "name_hash": "56511fafa9d63d3d8e37c41776d4af39809074fdce883e514d0b183f12fae3ea",
+    "email_hash": "61c4a6d03e907f008884b2ab9ec3f71769115526dee34919345c1bf74edb8496",
+    "phone_hash": "ea1c9dc4bf69d337c872f034ef6b386121eb1f91978dae992e27cd74c7bdc8ff",
+    "answers": [
+      {
+        "tech": "Javascript",
+        "question": "**Explain the difference between `==` and `===` in JavaScript, and provide examples illustrating when using one is preferable over the other, focusing on potential pitfalls.**  (Tests understanding of loose vs. strict equality, type coercion, and its implications in comparisons.)",
+        "answer": "I dont know the answer"
+      },
+      {
+        "tech": "Javascript",
+        "question": "**Describe how you would implement a debounce function in JavaScript.  Explain the use case and provide a concise code example.** (Tests knowledge of closures, timers (setTimeout/clearTimeout), and functional programming concepts.  Assesses problem-solving ability in a common scenario.)",
+        "answer": "Code Example \u2013 Using multiprocessing for CPU-bound task Since calculating square roots is CPU-bound, multiprocessing will bypass Python\u2019s Global Interpreter Lock (GIL) and actually use multiple CPU cores.  python Copy Edit import math from multiprocessing import Pool, cpu_count  def compute_sqrt(num):     return math.sqrt(num)  if __name__ == \"__main__\":     numbers = list(range(1_000_000))  # Large list     with Pool(cpu_count()) as pool:   # Use all available cores         results = pool.map(compute_sqrt, numbers)     print(f\"Processed {len(results)} numbers.\") 2. Code Example \u2013 Using threading for the same task Threads share the same process memory but still hit the GIL for CPU-bound work, so performance may not improve much here.  python Copy Edit import math from concurrent.futures import ThreadPoolExecutor  def compute_sqrt(num):     return math.sqrt(num)  numbers = list(range(1_000_000))  with ThreadPoolExecutor(max_workers=8) as executor:     results = list(executor.map(compute_sqrt, numbers))  print("
+      }
+    ],
+    "completion_status": "completed"
+  },
+  {
+    "experience": 3.0,
+    "position": "Full Stack Developer",
+    "location": "Kochi, Kerala, India",
+    "tech_stack": "Javascript, React",
+    "name_hash": "56511fafa9d63d3d8e37c41776d4af39809074fdce883e514d0b183f12fae3ea",
+    "email_hash": "61c4a6d03e907f008884b2ab9ec3f71769115526dee34919345c1bf74edb8496",
+    "phone_hash": "ea1c9dc4bf69d337c872f034ef6b386121eb1f91978dae992e27cd74c7bdc8ff",
+    "answers": [
+      {
+        "tech": "Javascript",
+        "question": "Explain the difference between `==` and `===` in JavaScript, and provide examples where their behavior differs.",
+        "answer": "I dont know the answer"
+      },
+      {
+        "tech": "Javascript",
+        "question": "Explain the difference between `==` and `===` in JavaScript, and provide examples where their behavior differs.",
+        "answer": "next question"
+      }
+    ],
+    "completion_status": "completed"
+  },
+  {
+    "experience": 3.0,
+    "position": "Full Stack Developer",
+    "location": "Kochi, Kerala, India",
+    "tech_stack": "Javascript, React",
+    "name_hash": "56511fafa9d63d3d8e37c41776d4af39809074fdce883e514d0b183f12fae3ea",
+    "email_hash": "61c4a6d03e907f008884b2ab9ec3f71769115526dee34919345c1bf74edb8496",
+    "phone_hash": "ea1c9dc4bf69d337c872f034ef6b386121eb1f91978dae992e27cd74c7bdc8ff",
+    "answers": [
+      {
+        "tech": "Javascript",
+        "question": "Describe a complex Javascript project.",
+        "answer": "I dont know the answer"
+      },
+      {
+        "tech": "Javascript",
+        "question": "What best practices do you follow with Javascript?",
+        "answer": "Code Example \u2013 Using multiprocessing for CPU-bound task Since calculating square roots is CPU-bound, multiprocessing will bypass Python\u2019s Global Interpreter Lock (GIL) and actually use multiple CPU cores.  python Copy Edit import math from multiprocessing import Pool, cpu_count  def compute_sqrt(num):     return math.sqrt(num)  if __name__ == \"__main__\":     numbers = list(range(1_000_000))  # Large list     with Pool(cpu_count()) as pool:   # Use all available cores         results = pool.map(compute_sqrt, numbers)     print(f\"Processed {len(results)} numbers.\") 2. Code Example \u2013 Using threading for the same task Threads share the same process memory but still hit the GIL for CPU-bound work, so performance may not improve much here.  python Copy Edit import math from concurrent.futures import ThreadPoolExecutor  def compute_sqrt(num):     return math.sqrt(num)  numbers = list(range(1_000_000))  with ThreadPoolExecutor(max_workers=8) as executor:     results = list(executor.map(compute_sqrt, numbers))  print("
+      },
+      {
+        "tech": "Javascript",
+        "question": "What best practices do you follow with Javascript?",
+        "answer": "I am not sure"
+      },
+      {
+        "tech": "Javascript",
+        "question": "How do you debug problems in Javascript?",
+        "answer": "When you\u2019re debugging problems in JavaScript, you usually go through a systematic process rather than randomly changing code until it works.  Here\u2019s a structured approach:  1\ufe0f\u20e3 Reproduce the problem consistently Make sure you know exactly how to trigger the bug.  Note down what should happen vs. what\u2019s actually happening.  2\ufe0f\u20e3 Check the browser console Open Developer Tools (F12 or right-click \u2192 Inspect \u2192 Console).  Look for:  Syntax errors  Stack traces  Warnings  Example:  js Copy Edit Uncaught ReferenceError: myFunction is not defined 3\ufe0f\u20e3 Use console.log() smartly Log variables at key points to see their values.  Example:  js Copy Edit console.log(\"Data before processing:\", data); Helps you trace the data flow and find where it goes wrong.  4\ufe0f\u20e3 Use breakpoints in DevTools Go to the Sources tab \u2192 click on the line number to set a breakpoint.  Reload the page \u2014 execution will pause at that line.  You can:  Step through code line by line  Inspect variable values  Watch expressions change in real time  5\ufe0f\u20e3 Check the call stack In the debugger, look at the Call Stack to see which functions were called and in what order before the error happened.  6\ufe0f\u20e3 Validate inputs & outputs Make sure functions receive the expected arguments.  Validate API responses (check network tab for raw response data).  7\ufe0f\u20e3 Use try...catch for error handling If the bug involves runtime errors, wrap suspect code:  js Copy Edit try {   riskyFunction(); } catch (err) {   console.error(\"Error caught:\", err); } 8\ufe0f\u20e3 Isolate the problem Temporarily remove unrelated code or test the function in isolation.  This helps confirm if the issue is local or caused by something elsewhere.  9\ufe0f\u20e3 Use external debugging tools Linting (ESLint) to catch syntax and style issues.  Unit testing (Jest, Mocha) to detect regressions.  Type checking (TypeScript) to catch type-related errors early.  \ud83d\udd1f Learn from the fix Once solved, understand why it happened.  Update documentation or add test cases so it doesn\u2019t happen again."
+      },
+      {
+        "tech": "Javascript",
+        "question": "What advanced Javascript features have you used?",
+        "answer": "i dont remember"
+      }
+    ],
+    "completion_status": "completed"
+  },
+  {
+    "experience": 3.0,
+    "position": "Full Stack Developer",
+    "location": "Kochi, Kerala, India",
+    "tech_stack": "Javascript, React",
+    "name_hash": "56511fafa9d63d3d8e37c41776d4af39809074fdce883e514d0b183f12fae3ea",
+    "email_hash": "61c4a6d03e907f008884b2ab9ec3f71769115526dee34919345c1bf74edb8496",
+    "phone_hash": "ea1c9dc4bf69d337c872f034ef6b386121eb1f91978dae992e27cd74c7bdc8ff",
+    "answers": [
+      {
+        "tech": "Javascript",
+        "question": "Describe a complex Javascript project.",
+        "answer": "I dont know the answer"
+      },
+      {
+        "tech": "Javascript",
+        "question": "What best practices do you follow with Javascript?",
+        "answer": "Code Example \u2013 Using multiprocessing for CPU-bound task Since calculating square roots is CPU-bound, multiprocessing will bypass Python\u2019s Global Interpreter Lock (GIL) and actually use multiple CPU cores.  python Copy Edit import math from multiprocessing import Pool, cpu_count  def compute_sqrt(num):     return math.sqrt(num)  if __name__ == \"__main__\":     numbers = list(range(1_000_000))  # Large list     with Pool(cpu_count()) as pool:   # Use all available cores         results = pool.map(compute_sqrt, numbers)     print(f\"Processed {len(results)} numbers.\") 2. Code Example \u2013 Using threading for the same task Threads share the same process memory but still hit the GIL for CPU-bound work, so performance may not improve much here.  python Copy Edit import math from concurrent.futures import ThreadPoolExecutor  def compute_sqrt(num):     return math.sqrt(num)  numbers = list(range(1_000_000))  with ThreadPoolExecutor(max_workers=8) as executor:     results = list(executor.map(compute_sqrt, numbers))  print("
+      },
+      {
+        "tech": "Javascript",
+        "question": "What best practices do you follow with Javascript?",
+        "answer": "I am not sure"
+      },
+      {
+        "tech": "Javascript",
+        "question": "How do you debug problems in Javascript?",
+        "answer": "When you\u2019re debugging problems in JavaScript, you usually go through a systematic process rather than randomly changing code until it works.  Here\u2019s a structured approach:  1\ufe0f\u20e3 Reproduce the problem consistently Make sure you know exactly how to trigger the bug.  Note down what should happen vs. what\u2019s actually happening.  2\ufe0f\u20e3 Check the browser console Open Developer Tools (F12 or right-click \u2192 Inspect \u2192 Console).  Look for:  Syntax errors  Stack traces  Warnings  Example:  js Copy Edit Uncaught ReferenceError: myFunction is not defined 3\ufe0f\u20e3 Use console.log() smartly Log variables at key points to see their values.  Example:  js Copy Edit console.log(\"Data before processing:\", data); Helps you trace the data flow and find where it goes wrong.  4\ufe0f\u20e3 Use breakpoints in DevTools Go to the Sources tab \u2192 click on the line number to set a breakpoint.  Reload the page \u2014 execution will pause at that line.  You can:  Step through code line by line  Inspect variable values  Watch expressions change in real time  5\ufe0f\u20e3 Chec"
+      },
+      {
+        "tech": "Javascript",
+        "question": "What advanced Javascript features have you used?",
+        "answer": "i dont remember"
+      }
+    ],
+    "completion_status": "completed"
+  },
+  {
+    "timestamp": "2025-08-10T17:47:25.894237",
+    "candidate_info": {
+      "name_hash": "56511fafa9d63d3d8e37c41776d4af39809074fdce883e514d0b183f12fae3ea",
+      "email_hash": "61c4a6d03e907f008884b2ab9ec3f71769115526dee34919345c1bf74edb8496",
+      "phone_hash": "ce10c4eeff480be6de6718441d87403206bc34fcc3e2515a3a6f4a0db48f09ba",
+      "experience": 3.0,
+      "position": "full stack engineer",
+      "location": "Kochi, Kerala, India",
+      "tech_stack": "javascript, react"
+    },
+    "answers": [],
+    "completion_status": "completed"
+  },
+  {
+    "experience": 3.0,
+    "position": "Full Stack Developer",
+    "location": "Kochi, Kerala, India",
+    "tech_stack": "Javascript, React",
+    "name_hash": "56511fafa9d63d3d8e37c41776d4af39809074fdce883e514d0b183f12fae3ea",
+    "email_hash": "61c4a6d03e907f008884b2ab9ec3f71769115526dee34919345c1bf74edb8496",
+    "phone_hash": "ea1c9dc4bf69d337c872f034ef6b386121eb1f91978dae992e27cd74c7bdc8ff",
+    "answers": [
+      {
+        "tech": "Javascript",
+        "question": "Describe a complex Javascript project.",
+        "answer": "I dont know the answer"
+      },
+      {
+        "tech": "Javascript",
+        "question": "What best practices do you follow with Javascript?",
+        "answer": "Code Example \u2013 Using multiprocessing for CPU-bound task Since calculating square roots is CPU-bound, multiprocessing will bypass Python\u2019s Global Interpreter Lock (GIL) and actually use multiple CPU cores.  python Copy Edit import math from multiprocessing import Pool, cpu_count  def compute_sqrt(num):     return math.sqrt(num)  if __name__ == \"__main__\":     numbers = list(range(1_000_000))  # Large list     with Pool(cpu_count()) as pool:   # Use all available cores         results = pool.map(compute_sqrt, numbers)     print(f\"Processed {len(results)} numbers.\") 2. Code Example \u2013 Using threading for the same task Threads share the same process memory but still hit the GIL for CPU-bound work, so performance may not improve much here.  python Copy Edit import math from concurrent.futures import ThreadPoolExecutor  def compute_sqrt(num):     return math.sqrt(num)  numbers = list(range(1_000_000))  with ThreadPoolExecutor(max_workers=8) as executor:     results = list(executor.map(compute_sqrt, numbers))  print("
+      },
+      {
+        "tech": "Javascript",
+        "question": "What best practices do you follow with Javascript?",
+        "answer": "I am not sure"
+      },
+      {
+        "tech": "Javascript",
+        "question": "How do you debug problems in Javascript?",
+        "answer": "When you\u2019re debugging problems in JavaScript, you usually go through a systematic process rather than randomly changing code until it works.  Here\u2019s a structured approach:  1\ufe0f\u20e3 Reproduce the problem consistently Make sure you know exactly how to trigger the bug.  Note down what should happen vs. what\u2019s actually happening.  2\ufe0f\u20e3 Check the browser console Open Developer Tools (F12 or right-click \u2192 Inspect \u2192 Console).  Look for:  Syntax errors  Stack traces  Warnings  Example:  js Copy Edit Uncaught ReferenceError: myFunction is not defined 3\ufe0f\u20e3 Use console.log() smartly Log variables at key points to see their values.  Example:  js Copy Edit console.log(\"Data before processing:\", data); Helps you trace the data flow and find where it goes wrong.  4\ufe0f\u20e3 Use breakpoints in DevTools Go to the Sources tab \u2192 click on the line number to set a breakpoint.  Reload the page \u2014 execution will pause at that line.  You can:  Step through code line by line  Inspect variable values  Watch expressions change in real time  5\ufe0f\u20e3 Chec"
+      },
+      {
+        "tech": "Javascript",
+        "question": "What advanced Javascript features have you used?",
+        "answer": "i dont remember"
+      }
+    ],
+    "completion_status": "completed"
+  },
+  {
+    "experience": 3.0,
+    "position": "Full Stack Developer",
+    "location": "Kochi, Kerala, India",
+    "tech_stack": "Javascript, React",
+    "name_hash": "76d3249099c89767990cd011e08b4734a7cbf328b0ce099652388944d80ff4a3",
+    "email_hash": "ecf7db9c99a05eb66be0c83d96c12f9926555c782fa4d17ea3c71170ba4caa07",
+    "phone_hash": "ea1c9dc4bf69d337c872f034ef6b386121eb1f91978dae992e27cd74c7bdc8ff",
+    "answers": [
+      {
+        "tech": "Javascript",
+        "question": "Describe a complex Javascript project.",
+        "answer": "I dont know the answer"
+      },
+      {
+        "tech": "Javascript",
+        "question": "What best practices do you follow with Javascript?",
+        "answer": "Of course! I follow several best practices to write clean, efficient, and secure JavaScript code. These practices focus on readability, performance, maintainability, and security.  Code Style and Readability \ud83d\udcd6 Maintaining a consistent and readable code style is crucial for collaboration and long-term maintenance.  Use a Linter and Formatter: I rely on tools like ESLint and Prettier. ESLint helps identify problematic patterns in the code, while Prettier automatically formats it to ensure a consistent style. This eliminates debates about style and catches potential bugs early.  Meaningful Naming Conventions: Variable and function names should be descriptive and clear. Instead of let x = 10;, I'd use let maxRetryCount = 10;. For functions, the name should describe what it does, like calculateTotalPrice() instead of calc().  Keep Functions Small and Focused: A function should do one thing and do it well (the Single Responsibility Principle). This makes functions easier to understand, test, and reuse.  Write Comments Wisely: I don't comment on what the code is doing (the code should explain itself), but why it's doing it. For example,"
+      }
+    ],
+    "completion_status": "completed"
+  },
+  {
+    "experience": 3.0,
+    "position": "Full Stack Developer",
+    "location": "Kochi, Kerala, India",
+    "tech_stack": "Javascript, React",
+    "name_hash": "76d3249099c89767990cd011e08b4734a7cbf328b0ce099652388944d80ff4a3",
+    "email_hash": "ecf7db9c99a05eb66be0c83d96c12f9926555c782fa4d17ea3c71170ba4caa07",
+    "phone_hash": "ea1c9dc4bf69d337c872f034ef6b386121eb1f91978dae992e27cd74c7bdc8ff",
+    "answers": [
+      {
+        "tech": "Javascript",
+        "question": "Describe a complex Javascript project.",
+        "answer": "I dont know the answer"
+      },
+      {
+        "tech": "Javascript",
+        "question": "What best practices do you follow with Javascript?",
+        "answer": "Of course! I follow several best practices to write clean, efficient, and secure JavaScript code. These practices focus on readability, performance, maintainability, and security.  Code Style and Readability \ud83d\udcd6 Maintaining a consistent and readable code style is crucial for collaboration and long-term maintenance.  Use a Linter and Formatter: I rely on tools like ESLint and Prettier. ESLint helps identify problematic patterns in the code, while Prettier automatically formats it to ensure a consistent style. This eliminates debates about style and catches potential bugs early.  Meaningful Naming Conventions: Variable and function names should be descriptive and clear. Instead of let x = 10;, I'd use let maxRetryCount = 10;. For functions, the name should describe what it does, like calculateTotalPrice() instead of calc().  Keep Functions Small and Focused: A function should do one thing and do it well (the Single Responsibility Principle). This makes functions easier to understand, test, and reuse.  Write Comm"
+      }
+    ],
+    "completion_status": "completed"
+  },
+  {
+    "experience": 3.0,
+    "position": "Full Stack Developer",
+    "location": "Kochi, Kerala, India",
+    "tech_stack": "Javascript, React",
+    "name_hash": "76d3249099c89767990cd011e08b4734a7cbf328b0ce099652388944d80ff4a3",
+    "email_hash": "ecf7db9c99a05eb66be0c83d96c12f9926555c782fa4d17ea3c71170ba4caa07",
+    "phone_hash": "ea1c9dc4bf69d337c872f034ef6b386121eb1f91978dae992e27cd74c7bdc8ff",
+    "answers": [
+      {
+        "tech": "Javascript",
+        "question": "**Explain the difference between `==` and `===` in JavaScript, and provide examples where using one over the other would produce different results.**  This tests understanding of loose vs. strict equality, a fundamental concept often causing bugs.",
+        "answer": "I dont know the answer"
+      },
+      {
+        "tech": "Javascript",
+        "question": "**Describe the concept of closures in JavaScript and provide a practical example illustrating their use in creating a private variable within a function.** This assesses comprehension of closures, a crucial aspect of functional programming and essential for many JavaScript design patterns.",
+        "answer": "i dont know"
+      },
+      {
+        "tech": "Javascript",
+        "question": "**You have an array of objects, each with a `name` and `age` property. Write a JavaScript function that sorts this array by age in ascending order.  Explain your approach and the time complexity of your solution.** This evaluates the ability to work with arrays, objects, and sorting algorithms, while also assessing understanding of Big O notation.",
+        "answer": "i am not sure"
+      },
+      {
+        "tech": "Javascript",
+        "question": "**Explain the difference between `forEach`, `map`, `filter`, and `reduce` array methods.  Provide a practical example demonstrating when you might choose one over the others.** This explores knowledge of higher-order array functions \u2013 a core aspect of modern JavaScript development and functional programming.",
+        "answer": "no answer"
+      },
+      {
+        "tech": "React",
+        "question": "**Explain the concept of \"lifting state up\" in React.  Provide a practical example where you would use this technique and explain why it's beneficial.**  (This tests understanding of component communication and state management.)",
+        "answer": "no idea"
+      }
+    ],
+    "completion_status": "completed"
+  },
+  {
+    "experience": 3.0,
+    "position": "full stack developer",
+    "location": "kochi,kerala,india",
+    "tech_stack": "javascript, react",
+    "name_hash": "8ba7ea4f39e9aec5829e586ed9b37913931e1dd6a16db954b5d18082407a312b",
+    "email_hash": "61c4a6d03e907f008884b2ab9ec3f71769115526dee34919345c1bf74edb8496",
+    "phone_hash": "51795bbd4e5d68de72c84e6fef31c4cb9117262d2d90e4369906b8acd43e4612",
+    "answers": [
+      {
+        "tech": "javascript",
+        "question": "**Explain the difference between `==` and `===` in JavaScript, and provide examples where using one over the other would significantly impact the outcome.**  This tests understanding of loose vs. strict equality, a common source of bugs.",
+        "answer": "i dont know"
+      },
+      {
+        "tech": "javascript",
+        "question": "**Describe how `this` works in JavaScript, and explain how its value is determined in different contexts (e.g., regular function calls, methods, arrow functions). Provide code examples to illustrate your explanation.** This tests understanding of a core JavaScript concept often misunderstood by developers.",
+        "answer": "i am not sure"
+      },
+      {
+        "tech": "javascript",
+        "question": "**You have an array of objects, each object containing a `name` and `age` property. Write a JavaScript function that filters this array to return only the objects where the age is greater than 30, and then sorts the resulting array by name in ascending order.** This tests practical skills in array manipulation, filtering, and sorting.  The candidate should demonstrate familiarity with array methods like `filter` and `sort`.",
+        "answer": "i dont know"
+      },
+      {
+        "tech": "javascript",
+        "question": "**Explain the concept of closures in JavaScript.  Give a practical example where a closure is used to maintain state between function calls, and explain why this approach is useful.** This question assesses understanding of closures, a fundamental concept in JavaScript's functional programming capabilities.  The example should demonstrate understanding of how inner functions retain access to variables in their enclosing scope.",
+        "answer": "programming"
+      },
+      {
+        "tech": "react",
+        "question": "**Explain the concept of \"lifting state up\" in React.  Describe a scenario where you would use this technique and explain how it improves the application's structure and maintainability.**  (This tests understanding of component communication and state management.)",
+        "answer": "no idea"
+      },
+      {
+        "tech": "react",
+        "question": "**Describe the difference between `useState` and `useReducer` hooks. When would you choose one over the other, and why? Provide a simple example illustrating each.** (This assesses knowledge of React hooks and their appropriate usage.)",
+        "answer": "i dont know"
+      },
+      {
+        "tech": "react",
+        "question": "**You have a component that fetches data from an API using `useEffect` and displays it conditionally.  How would you handle loading and error states within this component to provide a good user experience? Show example code snippets to demonstrate error boundaries and loading indicators.** (This tests understanding of asynchronous operations, error handling, and best practices for user experience.)",
+        "answer": "no idea"
+      },
+      {
+        "tech": "react",
+        "question": "**Explain how you would optimize a React application for performance if it becomes slow due to a large amount of data being rendered. Describe at least three different strategies and the trade-offs involved in each.** (This assesses knowledge of performance optimization techniques in React, showing awareness of potential bottlenecks and solutions.)",
+        "answer": "it is good"
+      }
+    ],
+    "completion_status": "completed"
   }
 ]
