@@ -4,3 +4,4 @@ __pycache__/
 .env
 candidate_screenings.json
 chat_log.txt
+.streamlit/secrets.toml
