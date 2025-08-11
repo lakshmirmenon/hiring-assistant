@@ -1,5 +1,5 @@
 streamlit
 pandas
 python-dotenv
-google-generativeai
+google-genai
 
