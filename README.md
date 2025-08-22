@@ -128,8 +128,7 @@ Project Structure
 
 Demo
 - **Local Demo**: Run `streamlit run streamlit_app.py`
-- (Optional) Loom Video: [Add link here]
-- (Optional) Deployment: [Add live app link here]
+- (Optional) Deployment: https://hiring-assistant-gfwvhhvkmkuuuodafhedxp.streamlit.app/
 
 ---
 
@@ -157,4 +156,5 @@ License
 This project is for **educational and demonstration purposes** as part of the AI/ML Intern assignment.
 
 ---
+
 
